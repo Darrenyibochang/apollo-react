@@ -1,10 +1,8 @@
 import { Fragment } from "react";
 import { Route, Switch } from "react-router-dom";
-import FavoriteList from "./containers/FavoriteList";
 import LoginPage from "./containers/LoginPage";
 import MovieDetailsPage from "./containers/MovieDetailsPage";
 import MovieList from "./containers/MovieList";
-import RatedList from "./containers/RatedList";
 import "./styles.css";
 import NavBar from "./containers/NavBar";
 import DataProvider from "./dataProviders/DataProvider";
@@ -23,12 +21,12 @@ export default function App() {
             <Route path="/movies/:movieId" exact>
               <MovieDetailsPage />
             </Route>
-            <Route path="/favorite">
+            {/* <Route path="/favorite">
               <FavoriteList />
             </Route>
             <Route path="/rated">
               <RatedList />
-            </Route>
+            </Route> */}
             <Route>
               <LoginPage />
             </Route>

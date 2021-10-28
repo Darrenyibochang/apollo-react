@@ -2,8 +2,8 @@ import axios from "axios";
 const client = axios.create({
   baseURL: "https://api.themoviedb.org/3",
   params: {
-    api_key: "dae00b55c2f84ea3e6b7a5269e204c45",
-  },
+    api_key: "dae00b55c2f84ea3e6b7a5269e204c45"
+  }
 });
 
 export const getMovieList = (category, page) => {
@@ -20,8 +20,8 @@ export const getPersonalMovies = (accountId, listType, sessionId) => {
   return client
     .get(`/account/${accountId}/${listType}/movies`, {
       params: {
-        session_id: sessionId,
-      },
+        session_id: sessionId
+      }
     })
     .then((resp) => resp.data);
 };
@@ -30,12 +30,12 @@ export const rateMovie = (movieId, rate, sessionId) => {
   return client.post(
     `/movie/${movieId}/rating`,
     {
-      value: Number(rate),
+      value: Number(rate)
     },
     {
       params: {
-        session_id: sessionId,
-      },
+        session_id: sessionId
+      }
     }
   );
 };
@@ -51,12 +51,12 @@ export const toggleFavoriteMovie = (
     {
       media_type: "movie",
       media_id: movieId,
-      favorite: isFavorite,
+      favorite: isFavorite
     },
     {
       params: {
-        session_id: sessionId,
-      },
+        session_id: sessionId
+      }
     }
   );
 };
@@ -67,23 +67,23 @@ export const loginService = async (username, password) => {
   await client.post("/authentication/token/validate_with_login", {
     username,
     password,
-    request_token,
+    request_token
   });
   const {
-    data: { session_id },
+    data: { session_id }
   } = await client.post(`/authentication/session/new`, { request_token });
   const {
-    data: { id },
+    data: { id }
   } = await client.get("/account", {
     params: {
-      session_id,
-    },
+      session_id
+    }
   });
   const userData = {
     username,
     accountId: id,
     sessionId: session_id,
-    requestToken: request_token,
+    requestToken: request_token
   };
   return userData;
 };
