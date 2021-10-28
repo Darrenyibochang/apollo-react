@@ -21,12 +21,6 @@ export default function App() {
             <Route path="/movies/:movieId" exact>
               <MovieDetailsPage />
             </Route>
-            {/* <Route path="/favorite">
-              <FavoriteList />
-            </Route>
-            <Route path="/rated">
-              <RatedList />
-            </Route> */}
             <Route>
               <LoginPage />
             </Route>

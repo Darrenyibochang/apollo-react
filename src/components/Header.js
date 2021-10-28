@@ -58,11 +58,6 @@ const Header = ({ loginButton }) => {
           </Typography>
         </Box>
         <Typography variant="h6">{loginButton}</Typography>
-        <Typography variant="h6">
-          <a href="https://www.themoviedb.org/signup?language=en-US">
-            Register
-          </a>
-        </Typography>
       </Toolbar>
     </AppBar>
   );

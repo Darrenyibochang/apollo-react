@@ -14,15 +14,15 @@ import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
   media: {
-    height: "500px"
+    height: "500px",
   },
   content: {
-    textAlign: "center"
+    textAlign: "center",
   },
   actions: {
     display: "flex",
-    justifyContent: "space-between"
-  }
+    justifyContent: "space-between",
+  },
 });
 const MovieCard = ({
   id,
@@ -31,39 +31,13 @@ const MovieCard = ({
   rating,
   myRating,
   favorite,
-  onToggleFavorite
+  onToggleFavorite,
 }) => {
   const classes = useStyles();
   const history = useHistory();
   return (
     <Card className={classes.root} raised>
-      <CardMedia className={classes.media} image={imgSrc} title={title} />
-      <CardActionArea onClick={() => history.push(`/movies/${id}`)}>
-        <CardContent className={classes.content}>
-          <Typography gutterBottom variant="h5" component="h2">
-            {title}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions className={classes.actions}>
-        <Box display="flex" alignItems="center">
-          <StarIcon style={{ color: "#f5c518" }} />
-          <Typography variant="body1">
-            {myRating ? `${rating} / ${myRating}` : rating}
-          </Typography>
-        </Box>
-        <Box
-          display="flex"
-          alignItems="center"
-          onClick={() => onToggleFavorite(id)}
-        >
-          {favorite ? (
-            <FavoriteIcon style={{ color: "red" }} />
-          ) : (
-            <FavoriteBorderIcon style={{ color: "grey" }} />
-          )}
-        </Box>
-      </CardActions>
+      card
     </Card>
   );
 };
