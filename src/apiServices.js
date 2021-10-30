@@ -7,13 +7,13 @@ const client = axios.create({
 });
 
 export const getMovieList = (category, page) => {
-  return client
-    .get(`/movie/${category}`, { params: { page } })
-    .then((resp) => resp.data);
+  return 
+
 };
 
 export const getMovieDetail = (movieId) => {
-  return client.get(`/movie/${movieId}`).then((resp) => resp.data);
+  return 
+
 };
 
 // export const getPersonalMovies = (accountId, listType, sessionId) => {
